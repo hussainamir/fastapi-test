@@ -1,10 +1,21 @@
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+print(f"dirct path founded at {dir_path}")
+import sys
+sys.path.append(f"{dir_path}")
+sys.path.append(f"{dir_path}\\routers")
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import models
-from .database import engine
-from .routers import post, user, auth, vote
-from .config import settings
+import app.models
+from app.database import engine
+import app.routers.auth as auth
+import app.routers.post as post
+import app.routers.user as user
+import app.routers.vote as vote
+#from app.routers. import post, user, auth, vote
+from app.config import settings
 
 
 # models.Base.metadata.create_all(bind=engine)
@@ -24,9 +35,9 @@ app.add_middleware(
 app.include_router(post.router)
 app.include_router(user.router)
 app.include_router(auth.router)
-app.include_router(vote.router)
+#app.include_router(vote.router)
 
 
 @app.get("/")
 def root():
-    return {"message": "Hello World pushing out b to ubuntu"}
+    return {"message": "Hello World pushing out to ubuntu"}

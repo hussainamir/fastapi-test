@@ -1,7 +1,15 @@
+import sys
+
+for line in sys.path:
+    print(line)
 from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
-from .. import models, schemas, utils
-from ..database import get_db
+
+import app.schemas as schemas
+import app.utils as utils
+import app.models as models
+#from app.schemas import models, schemas, utils
+from app.database import get_db
 
 router = APIRouter(
     prefix="/users",
