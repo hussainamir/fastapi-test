@@ -15,6 +15,7 @@ psycopg2==2.9.3
 pyasn1==0.4.8
 pycparser==2.21
 pydantic==1.9.0
+python-dotenv==0.20.0
 python-jose==3.3.0
 rsa==4.8
 six==1.16.0
