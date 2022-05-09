@@ -2,8 +2,8 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 print(f"dirct path founded at {dir_path}")
 import sys
-#sys.path.append(f"{dir_path}")
-#sys.path.append(f"{dir_path}\\routers")
+sys.path.append(f"{dir_path}")
+sys.path.append(f"{dir_path}\\routers")
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
